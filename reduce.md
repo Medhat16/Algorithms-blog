@@ -1,12 +1,9 @@
-
-
-
 ## reduce(): the most useful algorithm in many programming languages
 
 
 ### Introduction
 
-In its essence, the computer program is a series of simple ideas put together to perform a complex process, and so we can refer to the computer program as the composition of abstract things called data, and some processes we perform over these things called algorithms, in other words,
+In its essence, the computer program is a series of simple ideas put together to perform a complex process, and so we can refer to the computer program as the composition of abstract things called data, and some processes we perform over these things are called algorithms, in other words,
 
 ```apl
                                                Algorithms+Data Structures=Programs 
@@ -17,18 +14,18 @@ In its essence, the computer program is a series of simple ideas put together to
 > 2.  the second is bringing two ideas, whether simple or complex, together, and setting them by one another so as to take a view of them at once, without uniting them into one, by which it gets all its ideas of relations.
 > 3. the third is separating them from all other ideas that accompany them in their real existence: this is called abstraction, and thus all its general ideas are made” [^1]
 
-We’ll start our journey to the fascinating world of algorithms, by studying one simple algorithm, the reduce algorithm, hopefully by the end you’d appreciate the power and simplicity of this algorithm, and it may very well be your favorite algorithm for a long time to come.
+We’ll start our journey to the fascinating world of algorithms, by studying one simple algorithm, the reduce algorithm, hopefully, by the end, you’d appreciate the power and simplicity of this algorithm, and it may very well be your favorite algorithm for a long time to come.
 
 
 ### 1. Functions definition
 
-We use the term Algorithm interchangeably with the term function, in fact “reduce()” is a special kind of function that takes functions as input, to explain why it does that, we need to know what it does, before that, we need to define special types of functions.
+We use the term Algorithm interchangeably with the term function, in fact, “reduce()” is a special kind of function that takes functions as input, to explain why it does that, we need to know what it does, before that, we need to define special types of functions.
 
-Higher-order function is the function that takes functions as input.[^2]
+A higher-order function is a function that takes functions as input.[^2]
 
-Dyadic function/binary operation is the function that take two inputs.[^3]
+Dyadic function/binary operation is the function that takes two inputs.[^3]
 
-Lambda function is the function that’s not bound to an identifier, i.e., has no name, used to be taken as an input to higher order functions.[^4]
+Lambda function is the function that’s not bound to an identifier, i.e., has no name, and used to be taken as an input to higher-order functions.[^4]
 
 ### 2. The Reduction Operation
 Reduce take a dyadic function and generalize this function to take any number of inputs then apply this function to a sequence.
@@ -57,7 +54,7 @@ and the output is
 ```python 
 4950
 ```
-here we can appreciate the power of reduce, we just added 100 numbers, with a one-liner!
+here we can appreciate the power of reduce(), we just added 100 numbers, with a one-liner!
 
 We can also get the maximum element in an array if we use the right lambda
 ```python
@@ -66,7 +63,7 @@ print(reduce(lambda x, y: x if (x > y) else y, [1, 7, 3]))
 ```python
 7
 ```
-in fact,  more that 70 algorithms in the c++ standard library can be written as a composition of reduce and another function, and this is the case many programming languages, we can show that with the Python built-in functions
+more than 70 algorithms in the c++ standard library can be written as a composition of reduce() and another function, and this is the case in many programming languages, we can show that with the Python built-in functions
 
 ```python
 sum() # reduce(lambda x, y: x + y)
@@ -75,7 +72,7 @@ min() # reduce(lambda x, y: x if x < y else y)
 any() # reduce(lambda x, y: x or  y) checks if any element in the list represents a Truthy value
 all() # reduce(lambda x, y: x and  y) checks if all the elements in the list represent Truthy values
 ```
-note that: you can do all of the previous functions in the form of raw `for loops`, we will discuss why it's bad to write raw loops in another time.
+note that: you can do all of the previous functions in the form of raw `for loops`, we will discuss why it's bad to write raw loops at another time.
 
 ### 3. Consistency of naming across languages
 
@@ -91,8 +88,8 @@ Being such a powerful tool, the reduction algorithm has a few consistent names a
 
 ### 4. Notation as a tool of thought [^5]
 
-to fully appreciate the reduce funtion, let's get away from the long words and different names, and let's focus on the idea of reduction, and let's introduce a new language called APL.
-in APL every thing is an vector/array for example
+to fully appreciate the reduce function, let's get away from the long words and different names, and let's focus on the idea of reduction, and let's introduce a new language called APL.
+in APL everything is a vector/array for example
 ```apl
 	1 2 3 4 5 6
 ```
@@ -103,13 +100,13 @@ you can add two vectors
 3 14 25
 	⍝ use this glyph ⍝ to add a comment
 ``` 
-and in apl `==` is just `=`, and the assigment operator is `←`
+and in APL `==` is just `=`, and the assignment operator is `←`
 ```apl
 	5 = 7 ⍝ 0
 	⍝ you can operate between a scaler and a vector
 	1 + 2 3 7
 3 4 8
-	⍝ so we can check if any element in a vector equals 5 just by writting 5 = vector
+	⍝ so we can check if any element in a vector equals 5 just by writing 5 = vector
 	5 = 1 2 3 4 5 6 7 8 9
 0 0 0 0 1 0 0 0 0 
 ```
@@ -138,7 +135,7 @@ and finally, reduce is just `/` if you want to perform addition reduction on vec
 ```
 let's use reduce to check if a string contains the letter 'M'
 ```apl
-	'helle, APL'
+	'hello, APL'
 hello, APL
 	'M'='hello, APL'
 0 0 0 0 0 0 0 0 0 0
@@ -151,9 +148,9 @@ hello, APL
 	∨/'M'='BY NOW YOU MUST THINK, OH REDUCE IS AWESOME'
 1
 ```
-if you want to try apl visit: [TryAPL](https://tryapl.org/)
+if you want to try APL visit: [TryAPL](https://tryapl.org/)
 ### 5. Conclusion
-your language comes with a set of expressive built-in functions, just like reduce, there is, scan(accumulate), filter, map, window, adjecent_difference and so much more we will discuss, learn your library, it'll help you write more readable and expressive code.
+your language comes with a set of expressive built-in functions, just like reduce, there is scan(accumulate), filter, map, window, adjecent_difference and so much more we will discuss, learn your library, it'll help you write more readable and expressive code.
 
 [^1]: [John Locke, An Essay Concerning Human Understanding (1690)](https://en.wikipedia.org/wiki/An_Essay_Concerning_Human_Understanding).
 [^2]:[Higher-order function](https://en.wikipedia.org/wiki/Higher-order_function) .
