@@ -17,7 +17,7 @@ In its essence, the computer program is a series of simple ideas put together to
 > 2.  the second is bringing two ideas, whether simple or complex, together, and setting them by one another so as to take a view of them at once, without uniting them into one, by which it gets all its ideas of relations.
 > 3. the third is separating them from all other ideas that accompany them in their real existence: this is called abstraction, and thus all its general ideas are made” [^1]
 
-We’ll start our journey to the festinating world of algorithms, by studying one simple algorithm, the reduce algorithm, hopefully by the end you’d appreciate the power and simplicity of this algorithm, and it may very well be your favorite algorithm for a long time to come.
+We’ll start our journey to the fascinating world of algorithms, by studying one simple algorithm, the reduce algorithm, hopefully by the end you’d appreciate the power and simplicity of this algorithm, and it may very well be your favorite algorithm for a long time to come.
 
 
 ### 1. Functions definition
